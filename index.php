@@ -1,23 +1,43 @@
-<?php
-// ข้อมูลสำหรับเชื่อมต่อฐานข้อมูล (เปลี่ยนตามข้อมูลจริงของคุณ)
-    $host = "sql107.infinityfree.com";         // ชื่อโฮสต์ (ดูใน MySQL Databases)
-    $username = "if0_38519477";        // ชื่อผู้ใช้ (Username)
-    $password = "tSxcSpoM6Wdrj"; // รหัสผ่านของบัญชีโฮสติ้ง
-    $database = "if0_38519477_DefinitelyCorrect";   // ชื่อฐานข้อมูล
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทดสอบหน้าเว็บ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>ยินดีต้อนรับสู่หน้าเว็บทดสอบ!</h1>
+    <p>นี่คือหน้าเว็บง่ายๆ เพื่อทดสอบการทำงานของโฮสติ้ง</p>
+    <p>วันที่ปัจจุบัน: <span id="date"></span></p>
+    <p>ลองคลิก <a href="https://www.google.com" target="_blank">ที่นี่</a> เพื่อไปยัง Google</p>
 
-// สร้างการเชื่อมต่อกับฐานข้อมูล
-$conn = mysqli_connect($host, $username, $password, $database);
-
-// ตรวจสอบว่าการเชื่อมต่อสำเร็จหรือไม่
-if (!$conn) {
-    die("การเชื่อมต่อล้มเหลว: " . mysqli_connect_error());
-} else {
-    echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
-}
-
-// คุณสามารถเพิ่มโค้ดอื่นๆ ต่อจากนี้ เช่น การดึงข้อมูลหรือบันทึกข้อมูล
-// เช่น: $query = "SELECT * FROM table_name";
-
-// ปิดการเชื่อมต่อ (ถ้าไม่ต้องการใช้ต่อ)
-mysqli_close($conn);
-?>
+    <script>
+        // แสดงวันที่ปัจจุบัน
+        const dateElement = document.getElementById("date");
+        const today = new Date();
+        dateElement.textContent = today.toLocaleDateString("th-TH");
+    </script>
+</body>
+</html>
